@@ -38,15 +38,12 @@ Array.from(boxes).forEach((element) => {
     let boxtext = element.querySelector('.boxtext');
     element.addEventListener('click', () => {
         // alert("clicked", boxtext.innerText);
-        if (boxtext.innerText === "") {
+        if(Isgameover) {
+            boxtext.innerText === "";
+        } else if (boxtext.innerText === "") {
             boxtext.innerText = turn;
             turn = changeTurn();
             checkWin();
-            if(!Isgameover){
-
-                document.getElementsByClassName("info")[0].innerText = "Turn for" + turn;
-            }
-
         }
     })
 
